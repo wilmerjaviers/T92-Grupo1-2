@@ -1,29 +1,8 @@
-const express = require('express');
+const express= require ('express');
 const app = express();
-const port = 3000;
+const port =3000;
 
-const usuarios = [
-    {
-        id: 1,
-        nombre: "Juan",
-        email: "juan@email.com"
-    },
-    {
-        id: 2,
-        nombre: "María",
-        email: "maria@email.com"
-    },
-    {
-        id: 3,
-        nombre: "Carlos",
-        email: "carlos@email.com"
-    },
-    {
-        id: 4,
-        nombre: "Ana",
-        email: "ana@email.com"
-    }
-];
+app.listen(port);
 
 const categorias=[
     {
@@ -46,7 +25,8 @@ const categorias=[
         "id": 5,
         "nombre": "Medio Ambiente"
     }
-]
+];
+
 
 const pedidos = [
     { id: 1, usuario: "Juan", total: 500 },
@@ -87,14 +67,10 @@ app.get("/api/pedidos", (req, res) => {
     res.json(pedidos);
 });
 
+
+
 app.get('/api/categorias', (req, res)=>{
     res.json(categorias);
-})
-
-app.get('/api/usuarios', (req, res) => {
-    res.json(usuarios);
 });
 
-app.listen(port, () => {
-    console.log(`Servidor corriendo en http://localhost:${port}`);
-});
+console.log(`server on port ${3000}`)
